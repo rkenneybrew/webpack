@@ -1,5 +1,3 @@
-// __webpack_public_path__ = myRuntimePublicPath;
-
 ////////// Import Configurations
 //// JS Configuration
 import ("./configs/js.webpack.config.js")

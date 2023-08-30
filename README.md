@@ -2,7 +2,9 @@
 
 # webpack
  Start-up Deployment Template - {Custom}
-> npm run-script build {or} npm run build
->>> **NO ERRORS**
+> - npm run-script build {or} npm run build
+>> Deploy your site with "Node.js" or "Firebase" for custom deployment.
+>> You may also deploy with which ever the choice you prefer.
+>>> **"NO ERRORS"**
 
 > PS: That "dist/main.js" directory is "annoying," if you know how to get rid of it, than be my guess.

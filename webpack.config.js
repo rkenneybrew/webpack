@@ -6,8 +6,6 @@ import ("./configs/js.webpack.config.js")
 //// Babel-loader Configuration
 import ("./configs/babel.config.js")
 
-// const webpack = require('webpack');
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");

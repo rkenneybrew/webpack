@@ -75,8 +75,8 @@ output: {
 	{
 	entry: './src/index.jsx',
 		output: {
-			filename: "./webpack/public/components/js/main/main.js",
-			chunkFilename: "./webpack/public/components/js/chunk/chunk.js",
+			filename: "../webpack/public/components/js/main/main.js",
+			chunkFilename: "../webpack/public/components/js/chunk/chunk.js",
 			clean: true,
 		}
 	},

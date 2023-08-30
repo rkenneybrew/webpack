@@ -1,0 +1,37 @@
+query PR($prid: Int!, $owner: String!, $repo: String!) {
+  repository(owner: $owner, name: $repo) {
+    pullRequest(number: $prid) {
+      createdAt,
+      authorAssociation,
+      author {
+        ... on User {
+          login,
+          email,
+          name
+        }
+      },
+      url,
+      bodyHTML,
+      bodyText,
+      labels(first: 100) {
+        nodes {
+          name
+        }
+      },
+      files(first: 100) {
+        nodes {
+          path
+        }
+      },
+      title,
+      baseRefName,
+      headRefName,
+      changedFiles,
+      mergeable,
+      closed,
+      closedAt,
+      merged,
+      mergedAt
+    }
+  }
+}

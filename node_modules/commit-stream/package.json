@@ -1,0 +1,114 @@
+{
+  "name": "commit-stream",
+  "version": "2.1.0",
+  "description": "Turn a `git log` into a stream of commit objects",
+  "main": "commit-stream.js",
+  "type": "module",
+  "scripts": {
+    "build": "true",
+    "test:ci": "npm run test",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvagg/commit-stream.git"
+  },
+  "author": "Rod <rod@vagg.org> (http://r.va.gg/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rvagg/commit-stream/issues"
+  },
+  "homepage": "https://github.com/rvagg/commit-stream",
+  "devDependencies": {
+    "bl": "^6.0.1",
+    "list-stream": "^2.1.0",
+    "readable-stream": "^4.3.0",
+    "split2": "^4.2.0",
+    "tape": "^5.6.3"
+  },
+  "dependencies": {
+    "strip-ansi": "^7.0.1",
+    "through2": "^4.0.2"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "breaking": true,
+              "release": "major"
+            },
+            {
+              "revert": true,
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": "patch"
+            },
+            {
+              "scope": "no-release",
+              "release": false
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "presetConfig": {
+            "types": [
+              {
+                "type": "feat",
+                "section": "Features"
+              },
+              {
+                "type": "fix",
+                "section": "Bug Fixes"
+              },
+              {
+                "type": "chore",
+                "section": "Trivial Changes"
+              },
+              {
+                "type": "docs",
+                "section": "Trivial Changes"
+              },
+              {
+                "type": "test",
+                "section": "Tests"
+              }
+            ]
+          }
+        }
+      ],
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ]
+  }
+}

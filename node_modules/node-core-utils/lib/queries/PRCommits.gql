@@ -1,0 +1,45 @@
+query Commits($prid: Int!, $owner: String!, $repo: String!, $after: String) {
+  repository(owner: $owner, name: $repo) {
+    pullRequest(number: $prid) {
+      commits(last: 100, after: $after) {
+        totalCount
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          commit {
+            committedDate
+            author {
+              user {
+                login
+              }
+              email
+              name
+            }
+            committer {
+              email
+              name
+            }
+            oid
+            message
+            messageHeadline
+            authoredByCommitter
+            checkSuites(first: 100) {
+              nodes {
+                app {
+                  slug
+                }
+                conclusion,
+                status
+              }
+            }
+            status {
+              state
+            }
+          }
+        }
+      }
+    }
+  }
+}

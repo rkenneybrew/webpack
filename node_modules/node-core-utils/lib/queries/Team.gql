@@ -1,0 +1,22 @@
+query team($org: String!, $team: String!, $after: String) {
+  organization(login: $org) {
+    login
+    team(slug: $team) {
+      name,
+      description,
+      members(first: 100, after: $after) {
+        totalCount
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          login,
+          name,
+          email,
+          url
+        }
+      }
+    }
+  }
+}

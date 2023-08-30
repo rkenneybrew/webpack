@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="site-dir">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/bitballoon/spec/files/site-dir.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
